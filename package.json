@@ -1,0 +1,24 @@
+{
+  "name": "GeoGrid",
+  "version": "0.1.0",
+  "description": "Generate grid based on GeoJSON data",
+  "main": "./lib/grid/index.js",
+  "scripts": {},
+  "bin": {
+    "grid": "./bin/grid.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brentertz/scapegoat.git"
+  },
+  "author": "Volox <voloxxx@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "2.x",
+    "chalk": "1.x",
+    "geojson-utils": "Volox/geojson-js-utils",
+    "lodash": "3.x",
+    "yargs": "3.x"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,14 @@
+Usage: grid [options] <input> <output>
+
+Description:
+
+  ${description}
+
+Options:
+
+  -p, --points, --points      Number of points for the grid
+  -i, --interleaved           Interleaved grid
+  -y, --vertical              Vertical distance, in meters
+  -x, --horizontal            Horizontal distance, in meters
+  -v, --version               Outputs version number
+  -h, --help                  Outputs this help message
