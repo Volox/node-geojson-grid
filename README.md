@@ -14,9 +14,9 @@ npm install node-geojson-grid -g
 
 
 ```sh
-node-grid -h
-node-grid -v
-node-grid -p 5000 milan.geo.json grid.geo.json
+node-geojson-grid -h
+node-geojson-grid -v
+node-geojson-grid -p 5000 milan.geo.json grid.geo.json
 ```
 
 
