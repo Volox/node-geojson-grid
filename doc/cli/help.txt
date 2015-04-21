@@ -1,4 +1,4 @@
-Usage: grid [options] <input> <output>
+Usage: node-grid [options] <input> <output>
 
 Description:
 
@@ -6,9 +6,9 @@ Description:
 
 Options:
 
-  -p, --points, --points      Number of points for the grid
+  -p, --points                Number of points for the grid
+  -m, --mpp                   Meters Per Point
   -i, --interleaved           Interleaved grid
-  -y, --vertical              Vertical distance, in meters
-  -x, --horizontal            Horizontal distance, in meters
+  -j, --json                  JSON file input <advanced>
   -v, --version               Outputs version number
   -h, --help                  Outputs this help message

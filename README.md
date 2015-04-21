@@ -1,6 +1,7 @@
 # GeoGrid
 
-Used to create a grid on the provided GeoJSON Polygon. The module can be used ad a CLI or as a module.
+Used to create a grid on the provided GeoJSON. The module can be used ad a CLI or
+as a module.
 
 # Install
 
@@ -14,41 +15,48 @@ npm install node-geojson-grid -g
 
 
 ```sh
-node-geojson-grid -h
-node-geojson-grid -v
-node-geojson-grid -p 5000 milan.geo.json grid.geo.json
+node-grid -h
+node-grid -v
+node-grid -p 5000 milan.geo.json grid.geo.json
 ```
 
 
 ## as Module
 
 ```js
-var Grid = require( 'node-geojson-grid' );
-var grid = new Grid();
-// Load GeoJSON Feature
-grid.load( GeoJSON );
-
-var pointsGrid = grid.createPointsGrid( points );
-var distanceGrid = grid.createDistanceGrid( vDistance, hDistance );
+var grid = require( 'node-geojson-grid' );
+var pointsGrid = grid.createPointsGrid( points, geoJson, options );
+var distanceGrid = grid.createDistanceGrid( mpp, geoJson, options );
 ```
 
 
 ## API
 
-### Grid
-
-
 Possible options are:
 * `interleaved`: The grid rows will be interleaved
 
-#### .load( GeoJSON )
-#### .getBoundingBox( coordinates )
-#### .getCoordinates( GeoJSON )
-#### .filterGridPoints( points )
-#### .createDistanceGrid( vDistance, hDistance )
-#### .createPointsGrid( points )
+#### .createDistanceGrid( mpp, area, [options] )
+Creates a grid on the provided area, each point will be offsetted by `mpp`  meters.
 
-#### Internal methods
-##### .toPoint( coordinates )
-##### .toLatitudeOffset( meters )
-##### .toLongitudeOffset( meters )
+#### .createPointsGrid( points, area, [options] )
+Creates a grid on the provided area with about `points`.
+
+#### .json( config )
+
+Creates a multilevel grid. The config objects is as follows:
+
+```js
+{
+  props: { // Can contain either
+    mpp: 500, // Meters offset per Point
+    points: 5000, // Total number of points
+  },
+  levels: FeatureCollection<Level>, // A FeatureCollection containing the levels of the map with corresponding properties to use.
+  options: { // The options to pass to the internal methods. OPTIONAL
+  },
+  area: GeoJson, // The input area in GeoJSON format
+}
+```
+
+Each level is a GeoJSON Feature, the `properties` field must contain the properties
+for the grid to create in the same format as the `props` field (`mpp` XOR `points`).
