@@ -5,7 +5,7 @@
   "main": "./lib/grid/index.js",
   "scripts": {},
   "bin": {
-    "node-grid": "node ./bin/node-geojson-grid.js"
+    "node-grid": "./bin/node-geojson-grid.js"
   },
   "repository": {
     "type": "git",
