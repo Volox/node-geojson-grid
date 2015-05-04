@@ -46,17 +46,16 @@ Creates a grid on the provided area with about `points`.
 Creates a multilevel grid. The config objects is as follows:
 
 ```js
-{
-  props: { // Can contain either
-    mpp: 500, // Meters offset per Point
-    points: 5000, // Total number of points
-  },
-  levels: FeatureCollection<Level>, // A FeatureCollection containing the levels of the map with corresponding properties to use.
-  options: { // The options to pass to the internal methods. OPTIONAL
-  },
-  area: GeoJson, // The input area in GeoJSON format
-}
+[
+    {
+        // One of those two properties
+        mpp: 300, // Meters offset per Point
+        points: 3000, // Total number of points
+        
+        options: {}, // Options
+        
+        area: GeoJSON // Valid GeoJSON
+    },
+    ...
+]
 ```
-
-Each level is a GeoJSON Feature, the `properties` field must contain the properties
-for the grid to create in the same format as the `props` field (`mpp` XOR `points`).
