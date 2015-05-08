@@ -1,6 +1,6 @@
 {
   "name": "node-geojson-grid",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "Generate grid based on GeoJSON data",
   "main": "./lib/grid/index.js",
   "scripts": {},
